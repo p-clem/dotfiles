@@ -9,23 +9,19 @@ echo -e "\n\nInstalling homebrew packages..."
 echo "=============================="
 
 formulas=(
-    # flags should pass through the the `brew list check`
-    'macvim --with-override-system-vim'
     ack
     diff-so-fancy
     #fzf
     git
     #highlight
-    hub
+    #hub
+    node
     neovim/neovim/neovim
     the_silver_searcher
     tmux
     tree
     wget
-    #z
-    zsh
     git-standup
-    entr
 )
 
 for formula in "${formulas[@]}"; do
