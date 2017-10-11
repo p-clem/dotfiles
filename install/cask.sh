@@ -26,6 +26,7 @@ brew cask install appcleaner
 brew cask install docker
 brew cask install firefox
 #brew cask install flux
+brew cask install dash
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install java
@@ -39,13 +40,12 @@ if [[ $isWorkMachine == false ]] ; then
     brew cask install adobe-photoshop-lightroom
     brew cask install dropbox
     brew cask install vlc
-    brew cask install dash
+    brew cask install dashlane
 fi
 
 # install fonts
 brew cask install font-hasklig
 brew cask install font-source-code-pro
-brew cask install font-source-code-pro-for-powerline
 
 # cleanup unneeded files
 brew cleanup
