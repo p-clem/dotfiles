@@ -44,6 +44,7 @@ if [[ $isWorkMachine == false ]] ; then
     brew cask install dropbox
     brew cask install vlc
     brew cask install dashlane
+    brew cask install cyberghost
 fi
 
 # install fonts
