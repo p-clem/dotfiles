@@ -30,6 +30,7 @@ brew cask install firefox
 brew cask install dash
 brew cask install google-chrome
 brew cask install iterm2
+brew cask install font-hack-nerd-font
 brew cask install java
 #brew cask install skype
 brew cask install atom
