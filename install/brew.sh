@@ -11,7 +11,7 @@ echo "=============================="
 formulas=(
     ack
     diff-so-fancy
-    #fzf
+    fzf
     git
     #highlight
     #hub

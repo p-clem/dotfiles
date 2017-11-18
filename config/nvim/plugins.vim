@@ -16,10 +16,12 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+" colorschemes
+Plug 'joshdick/onedark.vim'
 
 " utilities
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
-Plug 'joshdick/onedark.vim'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy file finder and so much more
 
 call plug#end()
 
