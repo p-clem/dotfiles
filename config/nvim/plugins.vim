@@ -19,6 +19,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " utilities
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 

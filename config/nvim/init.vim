@@ -34,6 +34,13 @@ inoremap jk <esc>
 
 " }}}
 
+" Section User Interface {{{
+
+
+colorscheme onedark
+
+" }}}
+
 " Section Plugins {{{
 
 " Toggle NERDTree
