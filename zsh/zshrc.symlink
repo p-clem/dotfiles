@@ -10,5 +10,8 @@ ZSH_THEME="agnoster"
 
 plugins=(git nvm tmux history zsh-autosuggestions)
 
+export EDITOR='nvim'
+export GIT_EDITOR='nvim'
+
 source $ZSH/oh-my-zsh.sh
 
