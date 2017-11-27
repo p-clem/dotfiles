@@ -1,3 +1,5 @@
+set -g default-terminal "xterm-256color"
+
 set -g history-limit 20000
 
 # automatically renumber tmux windows

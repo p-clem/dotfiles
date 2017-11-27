@@ -17,6 +17,8 @@ set autoread                " detect when a file is changed
 set history=1000            " change history to 1000
 set textwidth=120
 
+set relativenumber	    " relative line numbers
+
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
