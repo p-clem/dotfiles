@@ -27,12 +27,22 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " }}}
 
 " Section Mappings {{{
+" Tab control
+set expandtab             " insert tabs rather than spaces for <Tab>
+set tabstop=4               " the visible width of tabs
+set shiftwidth=4            " number of spaces to use for indent and unindent
+set shiftround              " round indent to a multiple of 'shiftwidth'
+set completeopt+=longest
+
+" }}}
 
 " set a map leader for more key combos
 let mapleader = ','
 
 " remap esc
 inoremap jk <esc>
+
+vnoremap <C-c> "+y
 
 " }}}
 
@@ -64,4 +74,21 @@ else
     nmap <silent> <leader>t :FZF<cr>
 endif
 
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+
 " }}}
+
+
