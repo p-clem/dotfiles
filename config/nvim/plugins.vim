@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
 Plug 'tpope/vim-rhubarb' " hub extension for fugitive
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ervandew/supertab'
+Plug 'tpope/vim-surround'
 
 Plug 'vim-syntastic/syntastic'
 
@@ -39,7 +40,7 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] } " JSX support
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
 
 " Elm
-Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
+Plug 'ElmCast/elm-vim'
 
 " language-specific plugins
 Plug 'elzr/vim-json', { 'for': 'json' } " JSON support

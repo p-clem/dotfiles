@@ -1,6 +1,8 @@
 source ~/.config/nvim/plugins.vim
 
-" Section General {{{
+"===============================
+" General
+"===============================
 
 " Abbreviations
 abbr funciton function
@@ -17,16 +19,17 @@ set autoread                " detect when a file is changed
 set history=1000            " change history to 1000
 set textwidth=120
 
-set relativenumber	    " relative line numbers
+"set relativenumber	    " relative line numbers
 
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
-" }}}
+"let g:python_host_prog = '/usr/local/bin/python2'
+"let g:python3_host_prog = '/usr/local/bin/python3'
 
-" Section Mappings {{{
+"===============================
+" Mappings
+"===============================
 " Tab control
 set expandtab             " insert tabs rather than spaces for <Tab>
 set tabstop=4               " the visible width of tabs
@@ -34,7 +37,6 @@ set shiftwidth=4            " number of spaces to use for indent and unindent
 set shiftround              " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
 
-" }}}
 
 " set a map leader for more key combos
 let mapleader = ','
@@ -44,16 +46,21 @@ inoremap jk <esc>
 
 vnoremap <C-c> "+y
 
-" }}}
-
-" Section User Interface {{{
-
-
+"===============================
+" User Interface
+"===============================
+set number
 colorscheme onedark
 
-" }}}
 
-" Section Plugins {{{
+"===============================
+" File specific indentation
+"===============================
+autocmd FileType elm setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+"===============================
+" Pluggins
+"===============================
 
 " Toggle NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
@@ -89,6 +96,11 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
-" }}}
+" https://github.com/ElmCast/elm-vim
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 
-
+" elm-vim
+let g:elm_syntastic_show_warnings = 1
+let g:elm_format_autosave = 1
+let g:elm_format_fail_silently = 0
