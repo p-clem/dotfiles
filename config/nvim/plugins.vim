@@ -18,6 +18,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " colorschemes
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 
 " utilities
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
@@ -30,6 +31,9 @@ Plug 'tpope/vim-rhubarb' " hub extension for fugitive
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
+
+Plug 'vim-airline/vim-airline' " fancy statusline
+Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
 
 Plug 'vim-syntastic/syntastic'
 

@@ -50,8 +50,9 @@ vnoremap <C-c> "+y
 " User Interface
 "===============================
 set number
-colorscheme onedark
-
+set background=dark
+colorscheme gruvbox
+"colorscheme onedark
 
 "===============================
 " File specific indentation
@@ -104,3 +105,11 @@ let g:syntastic_auto_loc_list = 1
 let g:elm_syntastic_show_warnings = 1
 let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 0
+
+
+" airline options
+" Airline
+let g:airline_left_sep= '░'
+let g:airline_right_sep= '░'
+let g:airline_powerline_fonts=1
+

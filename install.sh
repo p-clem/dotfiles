@@ -34,6 +34,9 @@ elif ! [[ $SHELL =~ .*zsh.* ]]; then
     chsh -s $(which zsh)
 fi
 
+echo "Installing npm packages"
+source install/npm.sh
+
 if ! command_exists zplug; then
     echo "installing zplug, a plugin manager for zsh - http://zplug.sh"
     git clone https://github.com/zplug/zplug ~/.zplug
