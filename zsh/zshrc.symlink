@@ -13,10 +13,9 @@ for config ($DOTFILES/zsh/*.zsh) source $config
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
-plugins=(git nvm tmux history zsh-autosuggestions)
+plugins=(git)
 
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 
 source $ZSH/oh-my-zsh.sh
-
