@@ -9,6 +9,9 @@
 # ignore directories
 --ignore-dir=node_modules
 --ignore-dir=bower_components
+--ignore-dir=dist
+--ignore-dir=coverage
+--ignore-dir=mockdata
 
 # added file types
 --type-set=css=.css,.less,.scss,.styl
