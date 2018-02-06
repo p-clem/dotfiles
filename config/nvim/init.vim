@@ -46,6 +46,13 @@ inoremap jk <esc>
 
 vnoremap <C-c> "+y
 
+" CTRL-S to Save
+:nmap <c-s> :w<CR>
+:imap <c-s> <Esc>:w<CR>a
+
+"This unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
 "===============================
 " User Interface
 "===============================
@@ -85,24 +92,7 @@ endif
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
-
-" https://github.com/ElmCast/elm-vim
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-
 " elm-vim
-let g:elm_syntastic_show_warnings = 1
 let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 0
 

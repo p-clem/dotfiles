@@ -35,7 +35,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
 
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 
 " JavaScript
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
