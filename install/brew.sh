@@ -13,9 +13,8 @@ formulas=(
     diff-so-fancy
     fzf
     git
-    #highlight
-    #hub
     node
+    python3
     neovim/neovim/neovim
     the_silver_searcher
     tmux
