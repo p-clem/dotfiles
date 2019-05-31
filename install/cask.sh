@@ -26,26 +26,16 @@ brew cask install appcleaner
 brew cask install docker
 brew cask install alfred
 brew cask install firefox
-#brew cask install flux
-brew cask install dash
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install font-hack-nerd-font
 brew cask install java
-#brew cask install skype
-brew cask install atom
-brew cask install sourcetree
-#brew cask install totalspaces
 brew cask install virtualbox
 brew cask install spotify
 
 # if this is not a work machine
 if [[ $isWorkMachine == false ]] ; then
-    brew cask install adobe-photoshop-lightroom
-    brew cask install dropbox
     brew cask install vlc
-    brew cask install dashlane
-    brew cask install cyberghost
 fi
 
 # install fonts
