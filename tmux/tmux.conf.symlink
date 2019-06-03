@@ -17,6 +17,10 @@ setw -g pane-base-index 1
 set-option -g set-titles on
 set-option -g set-titles-string "#T - #W"
 
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+
 ######################
 #### Key Bindings ####
 ######################
@@ -48,3 +52,6 @@ bind -r L resize-pane -R 10
 
 # enable mouse support for switching panes/windows
 setw -g mouse on
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'
