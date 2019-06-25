@@ -28,7 +28,6 @@ Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets
 Plug 'tpope/vim-commentary' " comment stuff out
 Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
 Plug 'tpope/vim-rhubarb' " hub extension for fugitive
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 
@@ -43,8 +42,17 @@ Plug 'moll/vim-node', { 'for': 'javascript' } " node support
 Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] } " JSX support
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
 
+" TypeScript
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
+" For async completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" For Denite features
+Plug 'Shougo/denite.nvim'
+
 " Elm
-Plug 'ElmCast/elm-vim'
+" Plug 'ElmCast/elm-vim'
 
 " language-specific plugins
 Plug 'elzr/vim-json', { 'for': 'json' } " JSON support
