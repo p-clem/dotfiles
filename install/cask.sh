@@ -28,6 +28,7 @@ brew cask install alfred
 brew cask install firefox
 brew cask install google-chrome
 brew cask install iterm2
+brew cask install postman
 brew cask install font-hack-nerd-font
 brew cask install java
 brew cask install virtualbox
