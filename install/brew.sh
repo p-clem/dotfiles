@@ -21,6 +21,7 @@ formulas=(
     tree
     wget
     git-standup
+    k9s
 )
 
 for formula in "${formulas[@]}"; do
