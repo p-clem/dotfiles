@@ -16,6 +16,7 @@ ZSH_THEME="agnoster"
 plugins=(git)
 
 export EDITOR='nvim'
+export VISUAL='nvim'
 export GIT_EDITOR='nvim'
 
 source $ZSH/oh-my-zsh.sh
