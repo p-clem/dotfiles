@@ -9,19 +9,14 @@ echo -e "\n\nInstalling homebrew packages..."
 echo "=============================="
 
 formulas=(
-    ack
     diff-so-fancy
-    fzf
     git
     node
     python3
     neovim/neovim/neovim
-    the_silver_searcher
     tmux
     tree
     wget
-    git-standup
-    k9s
 )
 
 for formula in "${formulas[@]}"; do

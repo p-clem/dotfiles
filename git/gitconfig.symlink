@@ -1,6 +1,6 @@
 [user]
 	name = Philippe Clement
-	email = philippe.clement@zalando.de
+	email = clementp67@gmail.com
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
@@ -17,3 +17,7 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[github]
+	user = p-clem
+[credential]
+	helper = osxkeychain

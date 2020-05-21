@@ -20,7 +20,6 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/brew.sh
     source install/zsh.sh
     source install/cask.sh
-    source install/osx.sh
 fi
 
 echo "creating vim directories"
@@ -37,9 +36,7 @@ fi
 echo "Installing npm packages"
 source install/npm.sh
 
-if ! command_exists zplug; then
-    echo "installing zplug, a plugin manager for zsh - http://zplug.sh"
-    git clone https://github.com/zplug/zplug ~/.zplug
-fi
+echo "Installing neovim dependencies"
+source install/nvim.sh
 
 echo "Done. Reload your terminal."
