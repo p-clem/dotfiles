@@ -53,21 +53,25 @@ vnoremap <C-c> "+y
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
+" === coc.nvim === "
+"   <leader>dd    - Jump to definition of current symbol
+"   <leader>dr    - Jump to references of current symbol
+"   <leader>dj    - Jump to implementation of current symbol
+"   <leader>ds    - Fuzzy search current project symbols
+nmap <silent> <leader>dd <Plug>(coc-definition)
+nmap <silent> <leader>dr <Plug>(coc-references)
+nmap <silent> <leader>dj <Plug>(coc-implementation)
+"nnoremap <silent> <leader>ds :<C-u>CocList -I -N --top symbols<CR>
+
 "===============================
 " User Interface
 "===============================
 set number
 set background=dark
 colorscheme gruvbox
-"colorscheme onedark
 
 "===============================
-" File specific indentation
-"===============================
-autocmd FileType elm setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-
-"===============================
-" Pluggins
+" Plugins
 "===============================
 
 " Toggle NERDTree
@@ -89,17 +93,24 @@ else
     nmap <silent> <leader>t :FZF<cr>
 endif
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
-" elm-vim
-let g:elm_format_autosave = 1
-let g:elm_format_fail_silently = 0
-
-
 " airline options
 " Airline
 let g:airline_left_sep= '░'
 let g:airline_right_sep= '░'
 let g:airline_powerline_fonts=1
 
+
+" === Coc.nvim === "
+" use <tab> for trigger completion and navigate to next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+"Close preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif

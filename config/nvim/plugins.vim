@@ -16,46 +16,36 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-" colorschemes
-Plug 'joshdick/onedark.vim'
+" === Editing Plugins === "
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy file finder and so much more
+
+" Intellisense Engine
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
+" === Git Plugins === "
+Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
+
+
+" === Javascript Plugins === "
+" Typescript syntax highlighting
+Plug 'HerringtonDarkholme/yats.vim'
+
+" ReactJS JSX syntax highlighting
+Plug 'maxmellon/vim-jsx-pretty'
+
+
+" === UI === "
+" File explorer
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
+
+" Colorscheme
 Plug 'morhetz/gruvbox'
 
-" utilities
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy file finder and so much more
-Plug 'mileszs/ack.vim' " search inside files using ack. Same as command line ack utility, but use :Ack
-Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
-Plug 'tpope/vim-commentary' " comment stuff out
-Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
-Plug 'tpope/vim-rhubarb' " hub extension for fugitive
-Plug 'ervandew/supertab'
-Plug 'tpope/vim-surround'
+" Customized vim status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-Plug 'vim-airline/vim-airline' " fancy statusline
-Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
-
-Plug 'w0rp/ale'
-
-" JavaScript
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
-Plug 'moll/vim-node', { 'for': 'javascript' } " node support
-Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] } " JSX support
-Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
-
-" TypeScript
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-
-" For async completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" For Denite features
-Plug 'Shougo/denite.nvim'
-
-" Elm
-" Plug 'ElmCast/elm-vim'
-
-" language-specific plugins
-Plug 'elzr/vim-json', { 'for': 'json' } " JSON support
 
 call plug#end()
 
