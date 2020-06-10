@@ -12,6 +12,7 @@ formulas=(
     diff-so-fancy
     git
     node
+    rgrep
     python3
     neovim/neovim/neovim
     tmux
