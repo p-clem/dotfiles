@@ -32,8 +32,8 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 "===============================
 " Tab control
 set expandtab             " insert tabs rather than spaces for <Tab>
-set tabstop=4               " the visible width of tabs
-set shiftwidth=4            " number of spaces to use for indent and unindent
+set tabstop=2               " the visible width of tabs
+set shiftwidth=2            " number of spaces to use for indent and unindent
 set shiftround              " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
 
@@ -44,11 +44,16 @@ let mapleader = ','
 " remap esc
 inoremap jk <esc>
 
-vnoremap <C-c> "+y
+" Prevent ex mode
+nnoremap Q <nop>
+
 
 " CTRL-S to Save
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
+
+" CTRL-X to Close
+:nmap <c-x> :q<CR>
 
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
@@ -67,13 +72,17 @@ nmap <silent> <leader>dj <Plug>(coc-implementation)
 " User Interface
 "===============================
 set number
+set relativenumber
 set background=dark
+let g:gruvbox_contrast_dark = 'soft'
+
 colorscheme gruvbox
 
 "===============================
 " Plugins
 "===============================
 
+" === NERDTree === "
 " Toggle NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
@@ -83,18 +92,27 @@ let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
 
+" === Fugitive (Git) === "
+nnoremap <C-g> <C-d> :Gdiff!<CR>
+
+" === fzf.nvim === "
 let g:fzf_layout = { 'down': '~25%' }
 
-if isdirectory(".git")
-    " if in a git project, use :GFiles
-    nmap <silent> <leader>t :GFiles --cached --others --exclude-standard<cr>
-else
-    " otherwise, use :FZF
-    nmap <silent> <leader>t :FZF<cr>
-endif
+" Search files
+nnoremap <C-p> :Files!<CR>
 
-" airline options
-" Airline
+" Search within files
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always ' 
+  \  . (len(<q-args>) > 0 ? <q-args> : '""'), 1,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+  \   <bang>0)
+nnoremap <C-f> :Rg!<CR>
+
+
+" === Airline === "
 let g:airline_left_sep= '░'
 let g:airline_right_sep= '░'
 let g:airline_powerline_fonts=1
