@@ -19,6 +19,7 @@ set-option -g set-titles-string "#T - #W"
 
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
 
 
 ######################
@@ -52,6 +53,32 @@ bind -r L resize-pane -R 10
 
 # enable mouse support for switching panes/windows
 setw -g mouse on
+
+# 256 Color
+set -g default-terminal "screen-256color"
+
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Setup 'v' to begin selection as in Vim
+unbind-key -T copy-mode-vi v
+unbind-key -T copy-mode-vi y
+unbind-key -T copy-mode-vi C-v
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind-key -T copy-mode-vi Enter
+
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+
+# Enter copy mode by C-s p
+# Enter copy mode from one page up by C-s C-u
+unbind-key p
+unbind-key C-u
+bind-key p copy-mode
+bind-key C-u copy-mode -eu
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
