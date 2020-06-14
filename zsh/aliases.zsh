@@ -66,3 +66,10 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 
 alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
 alias canary="/Applications/Google\\ Chrome\\ Canary.app/Contents/MacOS/Google\\ Chrome\\ Canary"
+
+# Start and restore tmux session while deleting the new empty session
+alias mux='pgrep -vx tmux > /dev/null && \
+          tmux new -d -s delete-me && \
+          tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && \
+          tmux kill-session -t delete-me && \
+          tmux attach || tmux attach'
