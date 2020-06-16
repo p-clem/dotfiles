@@ -48,6 +48,8 @@ inoremap jk <esc>
 nnoremap Q <nop>
 
 
+nnoremap <C-c> <nop>
+
 " CTRL-S to Save
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
@@ -68,8 +70,14 @@ nmap <silent> <leader>dr <Plug>(coc-references)
 nmap <silent> <leader>dj <Plug>(coc-implementation)
 "nnoremap <silent> <leader>ds :<C-u>CocList -I -N --top symbols<CR>
 
+" Replace all highlights
+nnoremap <leader>r :%s///g<left><left>
+nnoremap <leader>rc :%s///gc<left><left><left>
+
+" Replace word. Pressing dot will execute same change on following occurences
+nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
 "===============================
-" User Interface
+" user interface
 "===============================
 set number
 set relativenumber
@@ -78,22 +86,27 @@ let g:gruvbox_contrast_dark = 'soft'
 
 colorscheme gruvbox
 
+"nnoremap ; :
+"nnoremap : ;
+
 "===============================
-" Plugins
+" plugins
 "===============================
 
-" === NERDTree === "
-" Toggle NERDTree
-nmap <silent> <leader>k :NERDTreeToggle<cr>
+" === nerdtree === "
+" toggle nerdtree
+nmap <silent> <leader>k :nerdtreetoggle<cr>
 " expand to the path of the file in the current buffer
-nmap <silent> <leader>y :NERDTreeFind<cr>
+nmap <silent> <leader>y :nerdtreefind<cr>
 
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
 
 " === Fugitive (Git) === "
-nnoremap <C-g> <C-d> :Gdiff!<CR>
+nnoremap <C-g><C-d> :Gdiff!<CR>
+nnoremap <C-g><C-b> :Gblame!<CR>
+nnoremap <C-g><C-c> :Commits!<CR>
 
 " === fzf.nvim === "
 let g:fzf_layout = { 'down': '~25%' }
