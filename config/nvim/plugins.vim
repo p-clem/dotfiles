@@ -23,6 +23,7 @@ Plug 'junegunn/fzf.vim'
 " Intellisense Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'mattn/emmet-vim'
 
 " === Git Plugins === "
 Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
@@ -41,7 +42,8 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
 
 " Colorscheme
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'

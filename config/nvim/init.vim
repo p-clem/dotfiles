@@ -82,9 +82,16 @@ nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
 set number
 set relativenumber
 set background=dark
-let g:gruvbox_contrast_dark = 'soft'
 
-colorscheme gruvbox
+"let g:gruvbox_contrast_dark = 'soft'
+" colorscheme gruvbox
+colorscheme palenight
+let g:palenight_terminal_italics=1
+
+" Enables true colors
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 "nnoremap ; :
 "nnoremap : ;
@@ -95,9 +102,9 @@ colorscheme gruvbox
 
 " === nerdtree === "
 " toggle nerdtree
-nmap <silent> <leader>k :nerdtreetoggle<cr>
+nmap <silent> <leader>k :NerdTreeToggle<cr>
 " expand to the path of the file in the current buffer
-nmap <silent> <leader>y :nerdtreefind<cr>
+nmap <silent> <leader>y :NerdTreeFind<cr>
 
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
@@ -124,11 +131,15 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 nnoremap <C-f> :Rg!<CR>
 
-
+" === Emmmet === "
+let g:user_emmet_leader_key=','
+ 
 " === Airline === "
 let g:airline_left_sep= '░'
 let g:airline_right_sep= '░'
 let g:airline_powerline_fonts=1
+let g:airline_theme = "palenight"
+
 
 
 " === Coc.nvim === "
