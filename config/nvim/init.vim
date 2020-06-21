@@ -17,6 +17,10 @@ set nocompatible            " not compatible with vi
 set autoread                " detect when a file is changed
 
 set history=1000            " change history to 1000
+
+" Opening a new file when the current buffer has unsaved changes causes files to be hidden instead of closed
+set hidden
+
 set textwidth=120
 
 "set relativenumber	    " relative line numbers
@@ -36,7 +40,6 @@ set tabstop=2               " the visible width of tabs
 set shiftwidth=2            " number of spaces to use for indent and unindent
 set shiftround              " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
-
 
 " set a map leader for more key combos
 let mapleader = ','
@@ -102,9 +105,9 @@ endif
 
 " === nerdtree === "
 " toggle nerdtree
-nmap <silent> <leader>k :NerdTreeToggle<cr>
+nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
-nmap <silent> <leader>y :NerdTreeFind<cr>
+nmap <silent> <leader>y :NERDTreeFind<cr>
 
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
