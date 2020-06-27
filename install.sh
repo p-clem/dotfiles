@@ -12,15 +12,15 @@ git submodule update --init --recursive
 source install/git.sh
 source install/brew.sh
 source install/zsh.sh
+source install/link.sh
 
 echo "Installing npm packages"
 source install/npm.sh
 
-echo "creating vim directories"
-mkdir -p ~/.vim-tmp
-
 echo "Installing neovim dependencies"
 source install/nvim.sh
 
-source install/link.sh
+echo "creating vim directories"
+mkdir -p ~/.vim-tmp
+
 echo "Done. Reload your terminal."
