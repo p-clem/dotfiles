@@ -58,7 +58,7 @@ nnoremap <C-c> <nop>
 :imap <c-s> <Esc>:w<CR>a
 
 " CTRL-X to Close
-:nmap <c-x> :q<CR>
+:nmap <c-w> :q<CR>
 
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
@@ -114,7 +114,7 @@ let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
 
 " === Fugitive (Git) === "
-nnoremap <C-g><C-d> :Gdiff!<CR>
+nnoremap <C-g><C-d> :Gvdiff!<CR>
 nnoremap <C-g><C-b> :Gblame!<CR>
 nnoremap <C-g><C-c> :Commits!<CR>
 
