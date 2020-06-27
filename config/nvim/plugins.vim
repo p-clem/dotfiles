@@ -30,7 +30,12 @@ Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 
 
+
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
+
+Plug 'mhinz/vim-startify'
 
 " === Git Plugins === "
 Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
