@@ -12,6 +12,7 @@ git submodule update --init --recursive
 source install/git.sh
 source install/brew.sh
 source install/zsh.sh
+source install/tmux.sh
 source install/link.sh
 
 echo "Installing npm packages"
