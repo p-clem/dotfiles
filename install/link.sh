@@ -7,12 +7,8 @@ echo "=============================="
 linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 for file in $linkables ; do
     target="$HOME/.$( basename $file '.symlink' )"
-    if [ -e $target ]; then
-        echo "~${target#$HOME} already exists... Skipping."
-    else
-        echo "Creating symlink for $file"
-        ln -s $file $target
-    fi
+    echo "Creating symlink for $file"
+    ln -sf $file $target
 done
 
 
@@ -25,10 +21,6 @@ fi
 
 for config in $DOTFILES/config/*; do
     target=$HOME/.config/$( basename $config )
-    if [ -e $target ]; then
-        echo "~${target#$HOME} already exists... Skipping."
-    else
-        echo "Creating symlink for $config"
-        ln -s $config $target
-    fi
+    echo "Creating symlink for $config"
+    ln -sf $config $target
 done
