@@ -58,7 +58,16 @@ nnoremap <C-c> <nop>
 :imap <c-s> <Esc>:w<CR>a
 
 " CTRL-X to Close
-:nmap <c-w> :q<CR>
+:nnoremap <c-x> :q<CR>
+
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
 
 "This unsets the "last search pattern" register by hitting return
 nnoremap <CR> :noh<CR><CR>
@@ -72,6 +81,8 @@ nmap <silent> <leader>dd <Plug>(coc-definition)
 nmap <silent> <leader>dr <Plug>(coc-references)
 nmap <silent> <leader>dj <Plug>(coc-implementation)
 "nnoremap <silent> <leader>ds :<C-u>CocList -I -N --top symbols<CR>
+
+nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 
 " Replace all highlights
 nnoremap <leader>r :%s///g<left><left>
@@ -90,11 +101,22 @@ set background=dark
 " colorscheme gruvbox
 colorscheme palenight
 let g:palenight_terminal_italics=1
+hi CocErrorSign ctermbg=black ctermfg=white
 
 " Enables true colors
 if (has("termguicolors"))
   set termguicolors
 endif
+
+set completefunc=emoji#complete
+
+" to convert :smiley_cat: to 😸
+nmap <Leader>e :s/:\([^: ]\+\):/\=emoji#for(submatch(1), submatch(0), 0)/g<CR>:nohl<CR>
+
+" Folding
+" set foldmethod=syntax
+" set foldlevelstart=1
+" let javaScript_fold=1         " JavaScript
 
 "nnoremap ; :
 "nnoremap : ;
@@ -144,6 +166,8 @@ let g:airline_powerline_fonts=1
 let g:airline_theme = "palenight"
 
 
+" === jsdoc.nvim === "
+nmap <C-c> :JsDoc<CR> 
 
 " === Coc.nvim === "
 " use <tab> for trigger completion and navigate to next complete item
@@ -156,6 +180,18 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -178,6 +214,9 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " === Commentary.nvim === "
 nnoremap <space>/ :Commentary<CR>
 vnoremap <space>/ :Commentary<CR>
+
+
+let g:startify_change_to_dir=0
 " returns all modified files of the current git repo
 " `2>/dev/null` makes the command fail quietly, so that when we are not
 " in a git repo, the list will be empty

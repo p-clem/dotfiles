@@ -44,14 +44,24 @@ Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
 " === Javascript Plugins === "
 " Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'heavenshell/vim-jsdoc', { 
+  \ 'for': ['javascript', 'javascript.jsx','typescript', 'typescript.tsx'], 
+  \ 'do': 'make install'
+\}
+
+Plug 'jparise/vim-graphql'
 
 " ReactJS JSX syntax highlighting
 Plug 'maxmellon/vim-jsx-pretty'
 
 
+" Prisma orm
+Plug 'pantharshit00/vim-prisma'
+
 " === UI === "
 " File explorer
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
+Plug 'junegunn/vim-emoji'
 
 " Colorscheme
 "Plug 'morhetz/gruvbox'

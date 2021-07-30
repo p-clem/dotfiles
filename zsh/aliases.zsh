@@ -16,10 +16,7 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias l="ls -lah ${colorflag}"
-alias la="ls -AF ${colorflag}"
-alias ll="ls -lFh ${colorflag}"
-alias lld="ls -l | grep ^d"
+alias l="exa --all --long --color=always --group-directories-first"
 alias rmf="rm -rf"
 
 # Helpers

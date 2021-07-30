@@ -29,6 +29,9 @@ formulas=(
     tree
     wget
     fzf
+    httpie
+    z
+    tldr
 )
 
 for formula in "${formulas[@]}"; do
