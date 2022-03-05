@@ -10,16 +10,11 @@ export HOMEBREW_CASK_OPTS="--require-sha"
 sudo -v
 
 # install applications
-brew cask install appcleaner
-brew cask install alfred
-brew cask install firefox
-brew cask install google-chrome
-brew cask install alacritty
-brew cask install java
-brew cask install spotify
-brew cask install karabiner-elements
-#brew cask install docker
-#brew cask install virtualbox
+brew install --cask firefox
+brew install --cask java
+brew install --cask spotify
+brew install --cask karabiner-elements
+brew install --cask docker
 
 # cleanup unneeded files
 brew cleanup

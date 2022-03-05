@@ -1,29 +1,23 @@
 #!/bin/sh
 
 if test ! $(which brew); then
-    echo "Installing homebrew"
-    if [ "$(uname)" == "Darwin" ]; then 
-    	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    else
-      sudo apt update
-      sudo apt upgrade -y
-      bash -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh) -y"
-      test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-      test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-      test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-      echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-    fi
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/pclement/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 echo -e "\n\nInstalling homebrew packages..."
 echo "=============================="
 
 formulas=(
+    cask
     diff-so-fancy
     git
     node
     ripgrep
     python3
+    jq
+    k9s
     neovim/neovim/neovim
     tmux
     tree
