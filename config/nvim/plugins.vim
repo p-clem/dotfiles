@@ -22,20 +22,9 @@ Plug 'junegunn/fzf.vim'
 
 " Intellisense Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 
-
-
-Plug 'honza/vim-snippets'
+" Comment out stuff
 Plug 'tpope/vim-commentary'
-Plug 'mattn/emmet-vim'
-
-Plug 'mhinz/vim-startify'
 
 " === Git Plugins === "
 Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
@@ -54,17 +43,20 @@ Plug 'jparise/vim-graphql'
 " ReactJS JSX syntax highlighting
 Plug 'maxmellon/vim-jsx-pretty'
 
-
 " Prisma orm
 Plug 'pantharshit00/vim-prisma'
 
+" Emmet
+Plug 'mattn/emmet-vim'
+
 " === UI === "
+" vim start screen
+Plug 'mhinz/vim-startify'
+
 " File explorer
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
-Plug 'junegunn/vim-emoji'
 
 " Colorscheme
-"Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
 
 " Customized vim status line
@@ -72,5 +64,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
