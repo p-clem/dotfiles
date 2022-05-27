@@ -1,9 +1,5 @@
 source ~/.config/nvim/plugins.vim
-
-"===============================
-" General
-"===============================
-
+"
 " Abbreviations
 abbr funciton function
 abbr teh the
@@ -13,23 +9,16 @@ abbr cosnt const
 abbr attribtue attribute
 abbr attribuet attribute
 
+"===============================
+" General
+"===============================
 set nocompatible            " not compatible with vi
 set autoread                " detect when a file is changed
-
 set history=1000            " change history to 1000
-
-" Opening a new file when the current buffer has unsaved changes causes files to be hidden instead of closed
-set hidden
-
-set textwidth=120
-
-"set relativenumber	    " relative line numbers
-
+set hidden                  "TAB Opening a new file when the current buffer has unsaved changes causes files to be hidden instead of closed
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-"let g:python_host_prog = '/usr/local/bin/python2'
-"let g:python3_host_prog = '/usr/local/bin/python3'
 
 "===============================
 " Mappings
@@ -42,15 +31,13 @@ set shiftround              " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
 
 " set a map leader for more key combos
-let mapleader = ','
-
+let mapleader = ' '
 " remap esc
 inoremap jk <esc>
-
 " Prevent ex mode
 nnoremap Q <nop>
 
-
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <C-c> <nop>
 
 " CTRL-S to Save
@@ -60,11 +47,21 @@ nnoremap <C-c> <nop>
 " CTRL-X to Close
 :nnoremap <c-x> :q<CR>
 
+" Use system clipboard
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Quickfix navigation
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>
 
 set splitbelow
 set splitright
@@ -87,12 +84,14 @@ nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 " Replace all highlights
 nnoremap <leader>r :%s///g<left><left>
 nnoremap <leader>rc :%s///gc<left><left><left>
+vnoremap <leader>r :s///g<left><left>
+vnoremap <leader>rc :s///gc<left><left><left>
 
-" Replace word. Pressing dot will execute same change on following occurences
-nnoremap <silent> s* :let @/='\<'.expand('<cword>').'\>'<CR>cgn
 "===============================
 " user interface
 "===============================
+set textwidth=120
+set scrolloff=8
 set number
 set relativenumber
 set background=dark
@@ -185,8 +184,7 @@ let g:coc_global_extensions = [
 
 
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <TAB> <Plug>(coc-range-select)
-xmap <TAB> <Plug>(coc-range-select)
+" nnoremap <C-d> <Plug>(coc-range-select)
 
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')

@@ -46,9 +46,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 " Prisma orm
 Plug 'pantharshit00/vim-prisma'
 
-" Emmet
-Plug 'mattn/emmet-vim'
-
 " === UI === "
 " vim start screen
 Plug 'mhinz/vim-startify'
