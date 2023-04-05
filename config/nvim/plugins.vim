@@ -23,12 +23,17 @@ Plug 'junegunn/fzf.vim'
 " Intellisense Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'vim-test/vim-test'
+
 " Comment out stuff
 Plug 'tpope/vim-commentary'
 
 " === Git Plugins === "
 Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
 
+
+" === Markdown Plugin === "
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " === Javascript Plugins === "
 " Typescript syntax highlighting
@@ -49,6 +54,7 @@ Plug 'pantharshit00/vim-prisma'
 " === UI === "
 " vim start screen
 Plug 'mhinz/vim-startify'
+
 
 " File explorer
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
