@@ -79,6 +79,11 @@ nmap <silent> <leader>dr <Plug>(coc-references)
 nmap <silent> <leader>dj <Plug>(coc-implementation)
 "nnoremap <silent> <leader>ds :<C-u>CocList -I -N --top symbols<CR>
 
+" Applying code actions to the selected code block
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
 nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 
 " Replace all highlights
