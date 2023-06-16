@@ -21,3 +21,5 @@
 	user = pclement
 [credential]
 	helper = osxkeychain
+[url "git@github.bus.zalan.do:"]
+	insteadOf = https://github.bus.zalan.do/
